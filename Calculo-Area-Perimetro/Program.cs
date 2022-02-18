@@ -54,13 +54,12 @@ class Result
         else if (type == 2)
         {
             area = 3.14 * (valor1 * valor2);
-            perimetro = 2 * 3.14 * valor1;
-
-            return string.Format("O perímetro é: {0}", perimetro);
+            perimetro = 2 * 3.14 * area;
         }
         else if (type == 3)
         {
-            return string.Format("O perímetro é: {0}", valor1 + valor2 + valor3);
+            var result = valor1 + valor2 + valor3;
+            return string.Format("O perímetro é: {0}", result.ToString("F").Replace(",", "."));
         }
 
         return $"A área é {area.ToString("F").Replace(",", ".")} e o Perímetro {perimetro.ToString("F").Replace(",", ".")}";
